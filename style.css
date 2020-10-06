@@ -4,7 +4,7 @@
 	}
 	
 /*********************************************************************************/
-/* Body & Basic tags                                                                   */
+/* Body & Basic tags                                                             */
 /*********************************************************************************/
 	body
 	{
@@ -42,12 +42,36 @@
 	{
 		text-decoration: none;
 	}
+
+/*********************************************************************************/
+/* Heading Titles                                                                */
+/*********************************************************************************/
+.title
+{
+	margin-bottom: 2.5em;
+}
+.title h2
+{
+	font-size: 2.0em;
+	color: #261300;
+}
+.title .byline
+{
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 1.1em;
+	color: #6F6F6F;
+}
+
+/*********************************************************************************/
+/* container                                                                     */
+/*********************************************************************************/
 	.container
 	{
 		margin: 0px auto;
 		width: 1200px;
 	}
-
 
 /*********************************************************************************/
 /* Header                                                                        */
@@ -66,12 +90,12 @@
 	.sticky {
 		position: fixed;
 		top: 0;
-		width: 100%
+		width: 100%;
 	}
 
 
 /*********************************************************************************/
-/* MenuNav                                                                          */
+/* MenuNav                                                                       */
 /*********************************************************************************/
 
 	#menuNav
@@ -119,46 +143,77 @@
 		color: purple;
 	}
 
+/*********************************************************************************/
+/* HomeScreen grid                                                               */
+/*********************************************************************************/
+
+	#frames{
+		text-align: center;
+		margin: 5em;
+		display: grid;
+		grid-column-gap: 15px;
+		grid-row-gap: 15px;
+	}
+	.frame1
+	{
+		grid-area: 1 / 1 / 3 / 2;
+	}
+	.frame2
+	{
+		grid-area: 1 / 2 / 2 / 3;
+	}
+	.frame3
+	{
+		grid-area: 1 / 3 / 2 / 4;
+	}
+	.frame4
+	{
+		grid-area: 2 / 2 / 3 / 3;
+	}
+	.frame5
+	{
+		grid-area: 2 / 3 / 3 / 4;
+	}
 
 /*********************************************************************************/
-/* NWS ( No wrapper )                                                                       */
+/* NWS ( No wrapper )                                                            */
 /*********************************************************************************/
 
-	#NWS
+	#nwsWhiteBanner
 	{
 		padding-top: 2em;
 		padding-bottom: 2em;
 		text-align: center;
 	}
-	#NWS h1
+	#nwsWhiteBanner h1
 	{
 		font-size: 3.5em;
 	}
-	#NWS h1 a
+	#nwsWhiteBanner h1 a
 	{
 		color: #6C2A6A;
 	}
-	#NWS a
+	#nwsWhiteBanner a
 	{
 		text-decoration: none;
+		font-size: 1.5em;
 	}
-	#NWS span
+	#nwsWhiteBanner span
 	{
 		letter-spacing: 0.10em;
 		text-transform: uppercase;
 		font-size: 0.90em;
 		color: #3C3C3C;
 	}
-	#NWS span a
+	#nwsWhiteBanner span a
 	{
 		color: #3C3C3C;
 	}
 
 	
 /*********************************************************************************/
-/* youtubeViewers                                                                       */
+/* youtubeViewers                                                                */
 /*********************************************************************************/
-
 	#youtubeViewers
 	{
 		display: grid;
@@ -183,45 +238,22 @@
 /* Image Style                                                                   */
 /*********************************************************************************/
 
-	img 
-	{
-		text-decoration: none;
-	}
-
-	
-/*********************************************************************************/
-/* Heading Titles                                                                */
-/*********************************************************************************/
-
-	.title
-	{
-		margin-bottom: 3em;
-	}
-	.title h2
-	{
-		font-size: 2.8em;
-		color: #261300;
-	}
-	.title .byline
-	{
-		letter-spacing: 0.15em;
-		text-transform: uppercase;
-		font-weight: 400;
-		font-size: 1.1em;
-		color: #6F6F6F;
-	}
 
 
 /*********************************************************************************/
-/* Wrappers                                                                       */
+/* Wrappers                                                                      */
 /*********************************************************************************/
+	/* #wrapperMenuNav
+	{
 
+	} */
 	#wrapper1
 	{
 		background: #FFF;
 	}
 	#wrapper2
 	{
+		/* overflow: hidden - make available the padding bot */
 		overflow: hidden;
 		padding: 6em 0em 6em 0em;
 		background: #FFF;
@@ -230,33 +262,35 @@
 	{
 		background: #6C2A6A;
 	}
-
-
-/*********************************************************************************/
-/* nwsStreaming                                                                      */
-/*********************************************************************************/
-
-	#nwsStreaming
+	#wrapper4
 	{
-		width: 1000px;
+		background: #6C2A6A;
+	}
+
+
+/*********************************************************************************/
+/* nwsStreaming                                                                  */
+/*********************************************************************************/
+	#nwsStreamingGames
+	{
+		width: 1200px;
 		padding: 3em 100px 3em 100px;
 		text-align: center;
-		color: rgba(255, 255, 255, 0.747);
+		color: rgba(255, 255, 255, 0.900);
 	}
-	#nwsStreaming .title h2
+	#nwsStreamingGames .title h2
 	{
 		color: rgb(255, 255, 255);
 	}
-	#nwsStreaming a, #welcome strong
+	#nwsStreamingGames a, strong
 	{
 		color: rgb(255, 255, 255);
 	}
 
 
 /*********************************************************************************/
-/* MoreAccessWrapper                                                                    */
+/* MoreAccessWrapper                                                             */
 /*********************************************************************************/
-
 	#moreAccessWrapper
 	{
 		padding-top: 0em;
@@ -297,6 +331,7 @@
 		font-size: 1.6em;
 		color: rgba(0,0,0,0.8);
 	}
+	/* moreAccessWrapper columns */
 	.column1, .column2, .column3, .column4
 	{
 		width: 282px;
@@ -308,15 +343,22 @@
 	}
 	.column4
 	{
-		float: right;
+		float: left;
 	}
 
 
 /*********************************************************************************/
-/* Button Style                                                                  */
+/* Buttons Style                                                                 */
 /*********************************************************************************/
-
-	.button
+	.column1 .button, .column2 .button, .column3 .button, .column4 .button
+	{
+		transition: 0.3;
+	} 	
+	.button:hover
+	{
+		transform: scale(1.2);
+	}
+.button
 	{
 		display: inline-block;
 		margin-top: 2em;
@@ -329,62 +371,111 @@
 		font-size: 1.2em;
 		color: #FFF;
 	}
-
-	.button:before
+	/* buttonGames */
+	.buttonGames
 	{
 		display: inline-block;
-		background: #6C2A6A;
-		margin-right: 1em;
-		width: 40px;
-		height: 40px;
-		line-height: 40px;
-		border-radius: 20px;
+		margin-top: 2em;
+		padding: 0.6em 1em;
+		background-color: rgba(30, 30, 30, 0.900);
+		border-radius: 4px;
+		line-height: 1.8em;
+		text-decoration: none;
+		font-size: 1.2em;
+		transition: 0.3;
+	}
+	.buttonGames:hover
+	{
+		display: inline-block;
+		background: rgba(30, 30, 30, 0.900);
+		border-radius: 4px;
+		border-color: white;
 		text-align: center;
-		color: #272925;
+		transform: scale(1.2);
 	}
 
 
 /*********************************************************************************/
 /* Footer                                                                        */
 /*********************************************************************************/
-
 	#footer
 	{
-		padding: 2em 0em 2em 0em;
-		text-align: center;
+		padding: 1em 0em 0em 0em;
+		background-color: rgba(30, 30, 30, 0.908);
+		font-size: 16px;
+		color: #ffffff;
+	}
+	#footer .title
+	{
+		margin-bottom: 0em;
 	}
 	#footer .title h2
 	{
-		color: rgb(0, 0, 0);
+		color: #ffffff;
+		text-align: center;
+	}
+	#footer p
+	{
+		text-align: center;
 	}
 	#footer .title .byline
 	{
 		letter-spacing: normal;
 		text-transform: capitalize;
 		font-size: 1.6em;
-		color:#6C2A6A;
+		text-align: center;
 	}
-	#footer .contact 
+
+	/* footer grid */
+	.gridFooter {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: 1fr;
+		grid-column-gap: 5px;
+		grid-row-gap: 5px;
+	}
+
+	.footerFrame1 { grid-area: 1 / 2 / 2 / 3; }
+	.footerFrame2 { grid-area: 1 / 3 / 2 / 4; }
+	.footerFrame3 { grid-area: 1 / 4 / 2 / 5; }
+	.footerFrame4 { grid-area: 1 / 5 / 2 / 6; }
+
+	/* logo nws streaming */
+	#footer > .gridFooter > .footerFrame1 > #logoNwsStreaming > img
 	{
-		transition: 0.3;
+		display: inline-block;
+		width: 60%;
+		padding-bottom: 0.5em;
 	}
-	#footer .contact img
+	#footer > .gridFooter > .footerFrame1 
+	{
+		text-align: center;
+	}
+
+	/* lists of pages */
+	#footer > .gridFooter > .footerFrame2 > ul > li , 
+	#footer > .gridFooter > .footerFrame3 > ul > li
+	{
+		margin: 1em;
+	} 
+	#footer > .gridFooter > .footerFrame2 > ul > li > a, 
+	#footer > .gridFooter > .footerFrame3 > ul > li > a
+	{
+		color: white;
+		text-decoration: none;
+	}
+
+	#footer .gridFooter .footerFrame4 .contact
 	{
 		display : inline-block;
-		transform: scale(1.2);
-	}
-	.twitchLogo
-	{
-		margin-left: 4em;
-	}
-	.discordLogo
-	{
-		margin-right: 4em;
 	}
 
+	#footer > .gridFooter > .footerFrame4 > img
+	{
+		width: 50%;
+	}
 
 /* Copyright */
-
 	#copyright
 	{
 		width: 100%;
@@ -400,36 +491,7 @@
 	#copyright a
 	{
 		text-decoration: none;
+		color: white;
 	}
 
 
-
-/*  Cadres HomeScreen */
-
-	#frames{
-		text-align: center;
-		margin: 5em;
-		display: grid;
-		grid-column-gap: 15px;
-		grid-row-gap: 15px;
-	}
-	.frame1
-	{
-		grid-area: 1 / 1 / 3 / 2;
-	}
-	.frame2
-	{
-		grid-area: 1 / 2 / 2 / 3;
-	}
-	.frame3
-	{
-		grid-area: 1 / 3 / 2 / 4;
-	}
-	.frame4
-	{
-		grid-area: 2 / 2 / 3 / 3;
-	}
-	.frame5
-	{
-		grid-area: 2 / 3 / 3 / 4;
-	}

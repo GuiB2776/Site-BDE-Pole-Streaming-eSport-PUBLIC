@@ -1,0 +1,185 @@
+<html>
+
+    <head>
+        <title> Morpion </title>
+        <script language="javascript" src="scripts/idl.js"></script>
+    </head>
+
+
+    <body>
+
+    </body>
+
+        <script language="javascript">
+
+            joueur1=1;
+            joueur2=0;
+            j1_win=0;
+            j2_win=0;
+            nul=0;
+            coup=0;
+            var jeu=new Array(9);
+
+            for(a=0;a<9;a++)
+            {
+                jeu[a]=0;
+            }
+
+            document.write("<div id='barreverticale1' style='position:absolute;height:364px;width:10px;left:168px;top:68px;background-color:black;z-index:0'></div>");
+            document.write("<div id='barreverticale2' style='position:absolute;height:364px;width:10px;left:286px;top:68px;background-color:black;z-index:0'></div>");
+            document.write("<div id='barreverticale3' style='position:absolute;height:364px;width:10px;left:404px;top:68px;background-color:black;z-index:0'></div>");
+            document.write("<div id='barreverticale4' style='position:absolute;height:364px;width:10px;left:522px;top:68px;background-color:black;z-index:0'></div>");
+            document.write("<div id='barrehorizontale1' style='position:absolute;height:10px;width:364px;left:168px;top:68px;background-color:black;z-index:0'></div>");
+            document.write("<div id='barrehorizontale2' style='position:absolute;height:10px;width:364px;left:168px;top:186px;background-color:black;z-index:0'></div>");
+            document.write("<div id='barrehorizontale3' style='position:absolute;height:10px;width:364px;left:168px;top:304px;background-color:black;z-index:0'></div>");
+            document.write("<div id='barrehorizontale4' style='position:absolute;height:10px;width:364px;left:168px;top:422px;background-color:black;z-index:0'></div>");
+            document.write("<div id='cacheblanc' style='position:absolute;height:10px;width:364px;left:168px;top:432px;background-color:white;z-index:0'></div>");
+
+            document.write("<div id='case0c' style='position:absolute;height:104px;width:108px;left:178px;top:78px;visibility:hidden;z-index:1'><img src='images/croix_morpion.jpg' height='104' width='108'></div>");
+            document.write("<div id='case1c' style='position:absolute;height:104px;width:108px;left:296px;top:78px;visibility:hidden;z-index:1'><img src='images/croix_morpion.jpg' height='104' width='108'></div>");
+            document.write("<div id='case2c' style='position:absolute;height:104px;width:108px;left:414px;top:78px;visibility:hidden;z-index:1'><img src='images/croix_morpion.jpg' height='104' width='108'></div>");
+            document.write("<div id='case3c' style='position:absolute;height:104px;width:108px;left:178px;top:196px;visibility:hidden;z-index:1'><img src='images/croix_morpion.jpg' height='104' width='108'></div>");
+            document.write("<div id='case4c' style='position:absolute;height:104px;width:108px;left:296px;top:196px;visibility:hidden;z-index:1'><img src='images/croix_morpion.jpg' height='104' width='108'></div>");
+            document.write("<div id='case5c' style='position:absolute;height:104px;width:108px;left:414px;top:196px;visibility:hidden;z-index:1'><img src='images/croix_morpion.jpg' height='104' width='108'></div>");
+            document.write("<div id='case6c' style='position:absolute;height:104px;width:108px;left:178px;top:314px;visibility:hidden;z-index:1'><img src='images/croix_morpion.jpg' height='104' width='108'></div>");
+            document.write("<div id='case7c' style='position:absolute;height:104px;width:108px;left:296px;top:314px;visibility:hidden;z-index:1'><img src='images/croix_morpion.jpg' height='104' width='108'></div>");
+            document.write("<div id='case8c' style='position:absolute;height:104px;width:108px;left:414px;top:314px;visibility:hidden;z-index:1'><img src='images/croix_morpion.jpg' height='104' width='108'></div>");
+            document.write("<div id='case0r' style='position:absolute;height:104px;width:108px;left:178px;top:78px;visibility:hidden;z-index:1'><img src='images/rond.jpg' height='104' width='108'></div>");
+            document.write("<div id='case1r' style='position:absolute;height:104px;width:108px;left:296px;top:78px;visibility:hidden;z-index:1'><img src='images/rond.jpg' height='104' width='108'></div>");
+            document.write("<div id='case2r' style='position:absolute;height:104px;width:108px;left:414px;top:78px;visibility:hidden;z-index:1'><img src='images/rond.jpg' height='104' width='108'></div>");
+            document.write("<div id='case3r' style='position:absolute;height:104px;width:108px;left:178px;top:196px;visibility:hidden;z-index:1'><img src='images/rond.jpg' height='104' width='108'></div>");
+            document.write("<div id='case4r' style='position:absolute;height:104px;width:108px;left:296px;top:196px;visibility:hidden;z-index:1'><img src='images/rond.jpg' height='104' width='108'></div>");
+            document.write("<div id='case5r' style='position:absolute;height:104px;width:108px;left:414px;top:196px;visibility:hidden;z-index:1'><img src='images/rond.jpg' height='104' width='108'></div>");
+            document.write("<div id='case6r' style='position:absolute;height:104px;width:108px;left:178px;top:314px;visibility:hidden;z-index:1'><img src='images/rond.jpg' height='104' width='108'></div>");
+            document.write("<div id='case7r' style='position:absolute;height:104px;width:108px;left:296px;top:314px;visibility:hidden;z-index:1'><img src='images/rond.jpg' height='104' width='108'></div>");
+            document.write("<div id='case8r' style='position:absolute;height:104px;width:108px;left:414px;top:314px;visibility:hidden;z-index:1'><img src='images/rond.jpg' height='104' width='108'></div>");
+
+            document.write("<div id='case0b' style='position:absolute;height:104px;width:108px;left:178px;top:78px;background-color:white' onclick='clic(\"case0\")'></div>");
+            document.write("<div id='case1b' style='position:absolute;height:104px;width:108px;left:296px;top:78px;background-color:white' onclick='clic(\"case1\")'></div>");
+            document.write("<div id='case2b' style='position:absolute;height:104px;width:108px;left:414px;top:78px;background-color:white' onclick='clic(\"case2\")'></div>");
+            document.write("<div id='case3b' style='position:absolute;height:104px;width:108px;left:178px;top:196px;background-color:white' onclick='clic(\"case3\")'></div>");
+            document.write("<div id='case4b' style='position:absolute;height:104px;width:108px;left:296px;top:196px;background-color:white' onclick='clic(\"case4\")'></div>");
+            document.write("<div id='case5b' style='position:absolute;height:104px;width:108px;left:414px;top:196px;background-color:white' onclick='clic(\"case5\")'></div>");
+            document.write("<div id='case6b' style='position:absolute;height:104px;width:108px;left:178px;top:314px;background-color:white' onclick='clic(\"case6\")'></div>");
+            document.write("<div id='case7b' style='position:absolute;height:104px;width:108px;left:296px;top:314px;background-color:white' onclick='clic(\"case7\")'></div>");
+            document.write("<div id='case8b' style='position:absolute;height:104px;width:108px;left:414px;top:314px;background-color:white' onclick='clic(\"case8\")'></div>");
+            document.write("<div id='player1' style='position:absolute;height:100px;width:100px;left:560px;top:150px'><form name='form1'><p align='left'><input type='button' value='Joueur 1' name='j1' onclick='verif(\"form1\")'><br><br><input type='text' name='resultj1' size='4' value='0'></p></form></div>");
+            document.write("<div id='player2' style='position:absolute;height:100px;width:100px;left:560px;top:250px'><form name='form2'><p align='left'><input type='button' value='Joueur 2' name='j2' onclick='verif(\"form2\")'><br><br><input type='text' name='resultj2' size='4' value='0'></p></form></div>");
+
+            function clic(nom)
+            {
+                coup++;	
+                if(joueur1)
+                {
+                    visibilitecalque(nom+"c","visible");
+                    jeu[nom.charAt(4)]=1;
+                    gagner();
+                    joueur1=0;
+                    joueur2=1;
+                    window.status="A vous "+document.form2.j2.value;
+                }
+                else
+                {
+                    visibilitecalque(nom+"r","visible");		
+                    jeu[nom.charAt(4)]=2;
+                    gagner();
+                    joueur1=1;
+                    joueur2=0;
+                    window.status="A vous "+document.form1.j1.value;
+                }
+                if(j1_win)
+                {
+                    endgame();
+                }
+                if(j2_win)
+                {
+                    endgame();
+                }
+                if(nul)
+                {
+                    endgame();
+                }
+            }
+
+            function endgame()
+            {
+                if(j1_win)
+                {
+                    reponse=confirm("Bravo "+document.form1.j1.value+" vous avez gagné.\nNouvelle partie ?");
+                    document.form1.resultj1.value++;
+                }
+                if(j2_win)
+                {
+                    reponse=confirm("Bravo "+document.form2.j2.value+" vous avez gagné.\nNouvelle partie ?");
+                    document.form2.resultj2.value++;		
+                }
+                if(nul)
+                {
+                    reponse=confirm("Match nul.\rNouvelle partie ?");
+                }
+                if(!reponse)
+                {
+                    document.form1.resultj1.value=0;
+                    document.form2.resultj2.value=0;
+                    joueur1=1;
+                    joueur2=0;
+                }	
+                for(a=0;a<9;a++)
+                {
+                    jeu[a]=0;
+                    visibilitecalque("case"+a+"c","hidden");		
+                    visibilitecalque("case"+a+"r","hidden");		
+                }
+                coup=0;
+                nul=0;
+                j1_win=0;
+                j2_win=0;
+            }
+
+            function gagner()
+            {
+                if(joueur1)
+                {
+                    if(jeu[0]*jeu[1]*jeu[2]==1 || jeu[3]*jeu[4]*jeu[5]==1 || jeu[6]*jeu[7]*jeu[8]==1 || jeu[0]*jeu[3]*jeu[6]==1 || jeu[1]*jeu[4]*jeu[7]==1 || jeu[2]*jeu[5]*jeu[8]==1 || jeu[0]*jeu[4]*jeu[8]==1 || jeu[2]*jeu[4]*jeu[6]==1)
+                    {
+                        j1_win=1;
+                    }
+                }
+                else
+                {
+                    if(jeu[0]*jeu[1]*jeu[2]==8 || jeu[3]*jeu[4]*jeu[5]==8 || jeu[6]*jeu[7]*jeu[8]==8 || jeu[0]*jeu[3]*jeu[6]==8 || jeu[1]*jeu[4]*jeu[7]==8 || jeu[2]*jeu[5]*jeu[8]==8 || jeu[0]*jeu[4]*jeu[8]==8 || jeu[2]*jeu[4]*jeu[6]==8)
+                    {
+                        j2_win=1;
+                    }
+                }
+                if(!j1_win && !j2_win && coup==9)
+                {
+                    nul=1;
+                }
+            }
+
+            function verif(formname)
+            {
+                if(formname=="form1")
+                {
+                    document.form1.j1.value=prompt("Quel est votre nom Joueur 1 ?",document.form1.j1.value);
+                    if(joueur1)
+                    {
+                        window.status="A vous "+document.form1.j1.value;
+                    }
+                }
+                if(formname=="form2")
+                {
+                    document.form2.j2.value=prompt("Quel est votre nom Joueur 2 ?",document.form2.j2.value);
+                    if(joueur2)
+                    {
+                        window.status="A vous "+document.form2.j2.value;
+                    }
+                }
+            }
+            window.status="A vous "+document.form1.j1.value;
+
+     </script>
+
+
+</html>
