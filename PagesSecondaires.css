@@ -47,7 +47,7 @@
 }
 #planningIMG img 
 {
-    width: 1500px;
+    width: 1200px;
 }
 
 
@@ -56,6 +56,50 @@
 /* youtubeViewers                                                                */
 /*********************************************************************************/
 
+
+    /* Wrappers */
+	#wrapperEspaceMembreRedirection
+	{
+		background: #6C2A6A;
+    }
+    #wrapperEspaceMembreInfo
+	{
+		background: #6C2A6A;
+	}
+
+    /* nwsEspaceMembreRedirection */
+    #nwsEspaceMembreInfo
+	{
+		width: 1200px;
+		padding: 3em 100px 3em 100px;
+		text-align: center;
+		color: rgba(255, 255, 255, 0.900);
+	}
+	#nwsEspaceMembreInfo .title h2
+	{
+		color: rgb(255, 255, 255);
+	}
+	#nwsEspaceMembreInfo a, strong
+	{
+		color: rgb(255, 255, 255);
+    }
+
+    /* nwsEspaceMembreRedirection */
+    #nwsEspaceMembreRedirection
+	{
+		width: 1200px;
+		padding: 3em 100px 3em 100px;
+		text-align: center;
+		color: rgba(255, 255, 255, 0.900);
+	}
+	#nwsEspaceMembreRedirection .title h2
+	{
+		color: rgb(255, 255, 255);
+	}
+	#nwsEspaceMembreRedirection a, strong
+	{
+		color: rgb(255, 255, 255);
+	}
 /*********************************************************************************/
 /* JeuxWeb.html                                                               */
 /*********************************************************************************/
